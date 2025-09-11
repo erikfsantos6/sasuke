@@ -1,9 +1,14 @@
-import os
-os. system("cls")
+import streamlit as st
+import time
 
-idade = int(input("Digite a idade da pessoa: "))
+# Título e cabeçalho
+st.title("Atividade: 1")
+st.header("Laço de repetição: For")
 
-if idade >= 18 and idade <= 65:
-    print("É obrigado a votar.")
-else:
-    print("Não é obrigado a votar.")
+
+if st.button("Iniciar"):
+    placeholder = st.empty()  
+    for i in range(100, 121, 2):
+        placeholder.info(i)
+        time.sleep(1)
+    st.header("Fim")
