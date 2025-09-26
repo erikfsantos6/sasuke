@@ -1,27 +1,22 @@
 import os
 os.system("cls")
 
-def main():
-    soma = 0 
-    Contador = 0
+# Definindo variáveis para contar e somar.
+soma = 0
+contador = 0
 
-
+# Inserir uma nota.
 while True:
-        numero = int(input("Digite um número positivo (ou um número negativo para parar): "))
-        
-        if numero < 0:
-            break
-        
-        soma += numero
-        contador += 1
+    nota = float(input("Digite uma nota: "))
+    contador += 1  # Adiciona mais um ao contador.
+    soma += nota  # Soma a nota atual ao valor da variável soma.
 
-if contador > 0:
-        media = soma / contador
-        print(f"\nVocê informou {contador} números.")
-        print(f"A média aritmética é: {media:.2f}")
-    
-else:
-        print("Nenhum número positivo foi informado.")
+    continuar = input("Deseja digitar mais um nota? Digite S ou N: ").lower()
+    if continuar == "n":
+        print("Calculando média...")
+        break
 
-if __name__ == "__main__":
-    main()
+# Calculando média.
+media = soma / contador
+
+print(f"\nMédia: {media}")
