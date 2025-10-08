@@ -1,15 +1,16 @@
 import os
+import time
+
 os.system("cls")
 
-# função com passagem de parâmetros.
 # Criando uma função.
-def saudacao(nome, idade):
-    print(f"olá,{nome}! Bem-vindo(a)!")
-    print(f"Sua idade é {idade} anos")
-    print 
+def saudacao():
+    print("Boa tarde!")
+    time.sleep(3)  # Espera 3 segundos.
+    os.system("cls")
+
+# Código principal.
+saudacao()  # Chamando a função.
+print("Exemplo de uso de uma função sem parâmetros.")
 
 
-    print("Solicitando dados.")
-    nome = input("Digite seu nome:")
-    idade = int(input("Digite sua idade"))
-     
