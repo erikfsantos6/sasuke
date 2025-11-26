@@ -1,29 +1,36 @@
-import os
-from dataclasses import dataclass
+import os 
+os.system("cls ||clear") 
 
-os.system("cls")
+#CRUD usando lista 
+#CREATE=criar / salvar
+#Read=buscar/selecionar
+#Update=atualizar/modificar
+#Delete=excluir 
 
-@dataclass
-class Aluno:
-    nome: str
-    idade: int
+#criando uma lista 
+lista_cliente=[] 
 
-QUANTIDADE_ALUNOS = 5
-lista_alunos = []
 
-print("Solicitando dados do aluno.")
-for i in range(QUANTIDADE_ALUNOS):
-    aluno = Aluno(
-        nome=input("Digite seu nome: "),
-        idade=int(input("Digite sua idade: "))
-    )
-    lista_alunos.append(aluno)
+#Create
+print('create - adicionar ; /Inserir') 
+nome="Marta" 
+lista_cliente.append(nome ) 
+print(f"o nome:{nome} foi inserido com sucesso ") 
 
-print()
-print("Salvando dados.")
-arquivo = "dados_alunos.txt"
+#Read 
+print("\nRead - Ler / Mostrar") 
+print(lista_cliente) 
 
-with open(arquivo, "w") as arquivo_alunos:
-    for aluno in lista_alunos:
-        arquivo_alunos.write(f"{aluno.nome},{aluno.idade}\n")
-print("Salvo com sucesso!")
+#Update
+print("\nUpdate-Atualizar / Alterar") 
+nome_pra_atualizar="marta" 
+if nome_pra_atualizar in lista_cliente:
+    novo_nome="Marta silva" 
+    #funçao:index
+    indice=lista_cliente.index(nome_pra_atualizar) 
+    lista_cliente[indice]=novo_nome 
+    print(f"o nome {nome_pra_atualizar} foi atualizado para {novo_nome}")
+else:
+    print(f"o nome {nome_pra_atualizar} nao foi encontrado") 
+
+print(lista_cliente)
